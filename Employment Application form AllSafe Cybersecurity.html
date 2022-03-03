@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            html{
+                scroll-behavior: smooth;
+            }
+            .container {
+                display: block;
+                position: relative;
+                padding-left: 35px;
+                margin-bottom: 12px;
+                cursor: pointer;
+                font-size: 22px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                font-family: Georgia, "Times New Roman", Times, serif;
+                font-size: 15px;
+            }
+           .container input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+            }
+            .checkmark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 25px;
+                width: 25px;
+                background-color: #eee;
+                border-radius: 50%;
+            }
+            .container:hover input ~ .checkmark {
+                background-color: #ccc;
+            }
+            .container input:checked ~ .checkmark {
+                background-color: #2196F3;
+            }
+            .checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+            .container input:checked ~ .checkmark:after {
+               display: block;
+            } 
+            .container .checkmark:after {
+ 	            top: 9px;
+	            left: 9px;
+	            width: 8px;
+	            height: 8px;
+	            border-radius: 50%;
+	            background: white;
+            }
+            .form-style-5{
+                max-width: 500px;
+                padding: 10px 20px;
+                background: #f4f7f8;
+                margin: 10px auto;
+                padding: 20px;
+                background: #f4f7f8;
+                border-radius: 8px;
+                font-family: Georgia, "Times New Roman", Times, serif;
+            }
+            .form-style-5 fieldset{
+                border: none;
+            }
+            .form-style-5 legend {
+                font-size: 1.4em;
+                margin-bottom: 10px;
+            }
+            .form-style-5 label {
+                display: block;
+                margin-bottom: 8px;
+            }
+            .form-style-5 input[type="text"],
+
+            .form-style-5 input[type="email"],
+            .form-style-5 textarea,
+            .form-style-5 select {
+                font-family: Georgia, "Times New Roman", Times, serif;
+                background: rgba(255,255,255,.1);
+                border: none;
+                border-radius: 4px;
+                font-size: 15px;
+                margin: 0;
+                outline: 0;
+                padding: 10px;
+                width: 100%;
+                box-sizing: border-box; 
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box; 
+                background-color: #e8eeef;
+                color:#8a97a0;
+                -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+                box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+                margin-bottom: 30px;
+            }
+            .form-style-5 input[type="text"]:focus,
+            .form-style-5 input[type="email"]:focus,
+            .form-style-5 textarea:focus,
+            .form-style-5 select:focus{
+                background: #d2d9dd;
+            }
+            .form-style-5 select{
+                -webkit-appearance: menulist-button;
+                height:35px;
+            }
+            .form-style-5 .number {
+                background: #3889d8;
+                color: #fff;
+                height: 30px;
+                width: 30px;
+                display: inline-block;
+                font-size: 0.8em;
+                margin-right: 4px;
+                line-height: 30px;
+                text-align: center;
+                text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+                border-radius: 15px 15px 15px 0px;
+            }
+            
+            .form-style-5 input[type="submit"],
+            .form-style-5 input[type="button"]
+            {
+                position: relative;
+                display: block;
+                padding: 19px 39px 18px 39px;
+                color: #FFF;
+                margin: 0 auto;
+                background: #3889d8;
+                font-size: 18px;
+                text-align: center;
+                font-style: normal;
+                width: 100%;
+                border: 1px solid #275e94;
+                border-width: 1px 1px 3px;
+                margin-bottom: 10px;
+            }
+            .form-style-5 input[type="submit"]:hover,
+            .form-style-5 input[type="button"]:hover
+            {
+                background: #275e94;
+            }
+            h1{
+                text-align: center;
+                position: relative;
+                color: white;
+                font-family: Georgia, "Times New Roman", Times, serif; 
+            }
+            body{
+                background-image: url("https://media-exp1.licdn.com/dms/image/C4D1BAQGjDwqVUjU5zQ/company-background_10000/0/1547060279023?e=2159024400&v=beta&t=xxn07ttol7Jz3mg-rWs8PThMCMghKpCNKmyOxRQaaCc");
+                background-position: center;
+            }
+            p{
+                font-family: Georgia, "Times New Roman", Times, serif; 
+            }
+            legend{
+                text-align: center;
+            }
+            </style>
+            <title>
+                Employment Application form AllSafe Cybersecurity
+            </title>
+            <link rel = "icon" href = 
+"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUVERIWFRUVGBgYHSESFRIUGRUSFBgZGhwaGRocGRgcIS4lHiwrIRgaJjgmKy8xNTZDHCQ7QDs0PzQ3NTQBDAwMEA8QHhISHTQrIyw9Ozc3PzQ0MTQxNDQ0PzExNDQ0MTQ1NDQxNDY2PzQ0PTQ0NDQ0MTQ0NDQ0NDQ0NDQ0Mf/AABEIAOAA4AMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABQYDBAcBAgj/xABJEAACAQMBBAYECgYIBgMAAAABAgADBBESBQYhMRMiQVFhgQcycXIUNVRikZKTobHSFTNCUoKyFiRVc4OzwtFDU2Oio8EXIzT/xAAYAQEBAQEBAAAAAAAAAAAAAAAAAQMCBP/EACQRAQEBAAIBAwQDAQAAAAAAAAABEQIxIRITUQNBUmEycbFC/9oADAMBAAIRAxEAPwDs0REBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQERMb1FUEswAHMsQB9JgfcSFq712KnDXlsCOY6WmSPoMz2W37SscUrmg5/dSojH6AcxlTYlInmZ7CkREBERARE8zA9ieRmB7ERAREQEREBET51CB9REQEREBPCYlT2zVe8uGsqbMtJAGvaqnjhvVoKewsOLEch7Yk1Lce19u1rl2p2CqVU6Kl9UBNBWHNaajjVYeHVHfMlLc2ixDXTVLt+Za4YtTB+bRGEUeGDLBa26U0VKahVUaVVRhQB2ATPLudJny0qOy6CABaNFQOxURR9AE177d60rDFS2ov4tTTUPY2MjykrEm1ciqtu7Wt+tY3DKBx+CXBavbt4Kx69P2gkeE3ti7fWszUaiNRuEGXt3IJI/eptyqL84eeJOSF3h2ItyilWNOtTOuhcL61N//ankyngRLu9p10mp7IPdvaxr02FRQlek3Q3FIclcdq96sMMp7j4SbksxZdam07xaFCrVb1aatUPsUEyoej7eutdvWp3AQOqrVTQpQFGHHgSeWUOfniffpOu2NvRtUPXuqi0g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HjJuIkt1ZMeyJ2YR095n19a+3R0aaMeGdfnmS00bvZ6Oyvl1cDSKlNtLY54PYR4EGFfG2NQpa1LZpsKpCkjUq+upA55Utw78TTvapqG5ZWPR06LIMHqs7rrJI7cLox75m24FBGJNaqWOAMNVYnBwMKNKjhjOAO8z52Zs4JbCk37SkPgnmw6wBPdnA8AIGhcW/R2y1ld+kRUbVqfS3q9XRnTgjhgDt7+MVGapWrhqdd1RhTUUqi0lXqI5J66ksS/M8MYx2zfTZCDSNTlEIZKLNlFK8Rw5nB4gEkDhgcBMlXZys5dWqIzAKxpsAGA5ZBBGR3jj4wI0JVZrRKjOpK1OkAbSzhSgXLIcAngSR3sBjM+r6kEcmqKpohVVXp1Kg6LTkMXCsGPYdXW5ccczKpaKGpt1iUUopJLHDac5J4k9UcTMV1s4VC2p6mlhpamGwjDkRyyMjngjMCNru1SvVUpWdE0qq0qi0hkqGLHrqSesAOwae/M9pmq3wejULpq6RnOoCoyIwFNS6E4JDqSQc9U98kq+zgz6lZ0bAUtTIGpRnAYEEHGTg4yM855V2ejIgJfKnUlTUekVuOSGPfkjB4ccYga11RFI2yozgNWGoF3bIKPwyxPDIBxymd3PwymuTjonYrk4yHpgHHmZ9Ns4NTKO1RusKgcth1YYwVKgBcY5AY598W+zlV+k1O1TSULuckqSDjAAAwV7AOZ74EPRpsuz+mL1DUakDrLvwBAIwM4BHDjzPHvm58DQ3zEmpno1fhUqgZ1sOQOMcPV5eHGb/wCj06AUOOgKKY48dIGBx8or2YNRamp1ZRpOk4DLnVpYYORkdnHieMCKFZuhFvqbpOk+DF8nXoA6TVnnnosce8ywgSIsaWu4qV9DKNIpJrVkZsEszFGwR+yoyAeqezEmICIiAiIgJiq0lYEMoYHmpAYHyMyxAgqu6VgxybO2z3iki/gJsWW71pROaVtQQ/vJTRW+tjMlIjamQAnsRCkREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQP/2Q==">
+    </head>
+    <body>
+        <h1>Employment Application form for AllSafe Cybersecurity</h1>
+        <div class="form-style-5 ">
+            <form>
+            <fieldset>
+            <legend>Candidate Info</legend>
+            <input type="text" name="field1" placeholder="Your Name *">
+            <input type="text" name="field1" placeholder="Your Surname *">
+            <input type="email" name="field2" placeholder="Your Email *">
+            <input type="text" name="field1" placeholder="Your Phone Number *">
+            <input type="text" name="field1" placeholder="Salary requirements ">
+            <textarea name="field3" placeholder="About yourself"></textarea>
+            <p>Are you willing to relocate?</p>
+            <label class="container">Yes
+                <input type="radio" checked="checked" name="radio">
+                <span class="checkmark"></span>
+              </label>
+            </br>
+              <label class="container">No
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+              </label>
+            </br>
+              <label class="container">Not sure
+                <input type="radio" name="radio">
+                <span class="checkmark"></span>
+              </label>
+            </br>
+            <textarea name="field3" placeholder="Last company you worked for"></textarea>
+            <textarea name="field3" placeholder="Reference/Comments/Questions"></textarea>        
+            </fieldset>
+            <input type="submit" value="Apply" />
+            </form>
+            </div>
+    </body>
+</html>
